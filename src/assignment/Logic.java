@@ -25,6 +25,7 @@ public class Logic {
 
         return text.equalsIgnoreCase("stop");
     }
+
     public int TotalWords(String text) {
 
         String[] words = text.split(" ");

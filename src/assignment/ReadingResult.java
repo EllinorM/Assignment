@@ -14,9 +14,7 @@ public class ReadingResult {
         String longestWord = "";
         System.out.println("Write a story, when you´re done, write: stop");
         String text = scan.nextLine();
-        while (!logic.ShouldStop(text))
-        {
-           // totalNumberOfWords = totalNumberOfWords + logic.TotalWords(text);
+        while (!logic.ShouldStop(text)) {
             totalNumberOfWords += logic.TotalWords(text);
             totalTextLength += logic.GetTextLength(text);
             longestWord = logic.GetLongestWord(text, longestWord);
