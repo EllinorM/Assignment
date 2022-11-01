@@ -3,7 +3,6 @@ package assignment;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
-
 public class Tests {
     @Test
     public void wordLength() {
@@ -31,7 +30,6 @@ public class Tests {
 
         //Assert
         assertEquals(expected, actual);
-
     }
 
     @Test

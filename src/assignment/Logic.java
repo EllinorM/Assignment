@@ -1,12 +1,9 @@
 package assignment;
-
 import java.util.Arrays;
 import java.util.Comparator;
 
-
 public class Logic {
     public int GetTextLength(String text) {
-
         return text.length();
     }
 
@@ -22,12 +19,10 @@ public class Logic {
     }
 
     public boolean ShouldStop(String text) {
-
         return text.equalsIgnoreCase("stop");
     }
 
     public int TotalWords(String text) {
-
         String[] words = text.split(" ");
         return words.length;
     }
