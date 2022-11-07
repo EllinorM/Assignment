@@ -1,4 +1,5 @@
 package assignment;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -8,6 +9,7 @@ public class Logic {
     }
 
     public String GetLongestWord(String text, String currentLongestWord) {
+        //Splittar texten på mellanslag och jämför längden på ord, .max ger oss det längsta ordet i vår array
         String longest = Arrays.stream(text.split(" "))
                 .max(Comparator.comparingInt(String::length))
                 .orElse(null);
@@ -19,6 +21,7 @@ public class Logic {
     }
 
     public boolean ShouldStop(String text) {
+
         return text.equalsIgnoreCase("stop");
     }
 

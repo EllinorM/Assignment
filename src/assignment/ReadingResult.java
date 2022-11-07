@@ -1,4 +1,5 @@
 package assignment;
+
 import java.util.Scanner;
 
 public class ReadingResult {
@@ -15,10 +16,13 @@ public class ReadingResult {
         String text = scan.nextLine();
 
         while (!logic.ShouldStop(text)) {
-            totalNumberOfWords += logic.TotalWords(text);
-            totalTextLength += logic.GetTextLength(text);
-            longestWord = logic.GetLongestWord(text, longestWord);
-            totalNumberOfRows++;
+            //Kollar så text inte är null och tom sträng
+            if (text != null && !text.trim().isEmpty()) {
+                totalNumberOfWords += logic.TotalWords(text);
+                totalTextLength += logic.GetTextLength(text);
+                longestWord = logic.GetLongestWord(text, longestWord);
+                totalNumberOfRows++;
+            }
 
             text = scan.nextLine();
         }
