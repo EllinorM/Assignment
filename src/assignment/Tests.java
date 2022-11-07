@@ -12,10 +12,10 @@ public class Tests {
         int expected = 5;
 
         //Act
-        int actual = logic.GetTextLength(testData);
+       logic.GetTextLength(testData);
 
         //Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, logic.totalTextLength);
     }
 
     @Test
@@ -26,10 +26,10 @@ public class Tests {
         String expected = "Ellinor";
 
         //Act
-        String actual = logic.GetLongestWord(testData, "");
+        logic.GetLongestWord(testData);
 
         //Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, logic.currentLongestWord);
     }
 
     @Test
@@ -50,12 +50,12 @@ public class Tests {
         //Arrange
         Logic logic = new Logic();
         String testData = "Hej jag är 36 år!";
-        long expected = 5;
+        int expected = 5;
 
         //Act
-        int actual = logic.TotalWords(testData);
+        logic.TotalWords(testData);
 
         //Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, logic.totalNumberOfWords);
     }
 }

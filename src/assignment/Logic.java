@@ -4,28 +4,35 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Logic {
-    public int GetTextLength(String text) {
-        return text.length();
+
+    int totalNumberOfWords = 0;
+    int totalTextLength = 0;
+    int totalNumberOfRows = 0;
+    String currentLongestWord = "";
+
+    public void GetTextLength(String text) {
+        totalTextLength += text.length();
     }
 
-    public String GetLongestWord(String text, String currentLongestWord) {
-        //Splittar texten på mellanslag och jämför längden på ord, .max ger oss det längsta ordet i vår array
-        String longest = Arrays.stream(text.split(" "))
-                .max(Comparator.comparingInt(String::length))
-                .orElse(null);
+    public void GetLongestWord(String text) {
+        String[] words = text.split(" ");
 
-        if (longest.length() > currentLongestWord.length()) {
-            return longest;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > currentLongestWord.length()) {
+                currentLongestWord = words[i];
+            }
         }
-        return currentLongestWord;
     }
 
     public boolean ShouldStop(String text) {
         return text.equalsIgnoreCase("stop");
     }
 
-    public int TotalWords(String text) {
+    public void TotalWords(String text) {
         String[] words = text.split(" ");
-        return words.length;
+        totalNumberOfWords += words.length;
+    }
+    public void AddRowCount(){
+        totalNumberOfRows++;
     }
 }
