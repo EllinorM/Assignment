@@ -21,7 +21,6 @@ public class Logic {
     }
 
     public boolean ShouldStop(String text) {
-
         return text.equalsIgnoreCase("stop");
     }
 
